@@ -11,7 +11,8 @@ public class MyFirstProgram {
     System.out.println("Площадь кавадрата со стороной " + s.l + " = " + s.area());
 
     Rectangle r = new Rectangle(4,6);
-    System.out.println("Площадь прямоугольника со сторонами " + r.a + " и " + r.b + " = " + r.area());
+    System.out.println("Площадь прямоугольника со сторонами "
+            + r.a + " и " + r.b + " = " + r.area());
 
   }
 

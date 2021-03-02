@@ -1,6 +1,4 @@
-package HW;
-
-import java.util.logging.SocketHandler;
+package hw;
 
 public class DistanceCalculationHW2 {
   public static void main(String[] args) {
