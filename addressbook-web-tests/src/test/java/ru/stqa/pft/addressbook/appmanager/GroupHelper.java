@@ -12,13 +12,6 @@ public class GroupHelper extends HelperBase {
     super(wd);
   }
 
-  public void returnToGroupPage() {
-    click(By.linkText("group page"));
-  }
-
-  public void submitGroupCreation() {
-    click(By.name("submit"));
-  }
 
   public void fillGroupForm(GroupData groupData) {
     type(By.name("group_name"), groupData.getName());
@@ -26,15 +19,25 @@ public class GroupHelper extends HelperBase {
     type(By.name("group_footer"), groupData.getFooter());
   }
 
+  public void submitGroupCreation() {
+    click(By.name("submit"));
+  }
+
+  public void returnToGroupPage() {
+    click(By.linkText("group page"));
+  }
+
   public void initGroupCreation() {
     click(By.name("new"));
+  }
+
+  public void selectGroup() {
+    click(By.name("selected[]"));
   }
 
   public void deleteSelectedGroups() {
     click(By.name("delete"));
   }
 
-  public void selectGroup() {
-    click(By.name("selected[]"));
-  }
+
 }
