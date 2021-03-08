@@ -33,7 +33,7 @@ public class AddressCreationTest {
   @Test
   public void testAddressCreation() throws Exception {
     gotoAddressCreationPage();
-    fillAddressForm();
+    fillAddressForm(new AddressData("FirstName", "LastName", "Address", "Mobile", "email@mail.com"));
     submitAddressCreation();
     returnToHomePage();
     logout();
@@ -51,22 +51,22 @@ public class AddressCreationTest {
     driver.findElement(By.xpath("(//input[@name='submit'])[2]")).click();
   }
 
-  private void fillAddressForm() {
+  private void fillAddressForm(AddressData addressData) {
     driver.findElement(By.name("firstname")).click();
     driver.findElement(By.name("firstname")).clear();
-    driver.findElement(By.name("firstname")).sendKeys("FirstName");
+    driver.findElement(By.name("firstname")).sendKeys(addressData.getFirstname());
     driver.findElement(By.name("lastname")).click();
     driver.findElement(By.name("lastname")).clear();
-    driver.findElement(By.name("lastname")).sendKeys("LastName");
+    driver.findElement(By.name("lastname")).sendKeys(addressData.getLastname());
     driver.findElement(By.name("address")).click();
     driver.findElement(By.name("address")).clear();
-    driver.findElement(By.name("address")).sendKeys("Address");
+    driver.findElement(By.name("address")).sendKeys(addressData.getAddress());
     driver.findElement(By.name("mobile")).click();
     driver.findElement(By.name("mobile")).clear();
-    driver.findElement(By.name("mobile")).sendKeys("Mobile");
+    driver.findElement(By.name("mobile")).sendKeys(addressData.getMobile());
     driver.findElement(By.name("email")).click();
     driver.findElement(By.name("email")).clear();
-    driver.findElement(By.name("email")).sendKeys("email@mail.com");
+    driver.findElement(By.name("email")).sendKeys(addressData.getEmail());
   }
 
   private void gotoAddressCreationPage() {
