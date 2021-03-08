@@ -32,7 +32,26 @@ public class AddressCreationTest {
 
   @Test
   public void testAddressCreation() throws Exception {
-    driver.findElement(By.linkText("add new")).click();
+    gotoAddressCreationPage();
+    fillAddressForm();
+    submitAddressCreation();
+    returnToHomePage();
+    logout();
+  }
+
+  private void logout() {
+    driver.findElement(By.linkText("Logout")).click();
+  }
+
+  private void returnToHomePage() {
+    driver.findElement(By.linkText("home page")).click();
+  }
+
+  private void submitAddressCreation() {
+    driver.findElement(By.xpath("(//input[@name='submit'])[2]")).click();
+  }
+
+  private void fillAddressForm() {
     driver.findElement(By.name("firstname")).click();
     driver.findElement(By.name("firstname")).clear();
     driver.findElement(By.name("firstname")).sendKeys("FirstName");
@@ -48,9 +67,10 @@ public class AddressCreationTest {
     driver.findElement(By.name("email")).click();
     driver.findElement(By.name("email")).clear();
     driver.findElement(By.name("email")).sendKeys("email@mail.com");
-    driver.findElement(By.xpath("(//input[@name='submit'])[2]")).click();
-    driver.findElement(By.linkText("home page")).click();
-    driver.findElement(By.linkText("Logout")).click();
+  }
+
+  private void gotoAddressCreationPage() {
+    driver.findElement(By.linkText("add new")).click();
   }
 
   @AfterMethod(alwaysRun = true)
