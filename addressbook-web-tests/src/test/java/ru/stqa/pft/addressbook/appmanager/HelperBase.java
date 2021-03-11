@@ -4,6 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoAlertPresentException;
 
 public class HelperBase {
   private WebDriver wd;
@@ -38,4 +41,9 @@ public class HelperBase {
       return false;
     }
   }
-}
+
+  public void acceptAlert(){
+    Alert alert = wd.switchTo().alert();
+    alert.accept();
+  }
+  }
