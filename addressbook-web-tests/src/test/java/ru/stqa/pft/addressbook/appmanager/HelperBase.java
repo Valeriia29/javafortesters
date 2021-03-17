@@ -9,7 +9,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
 
 public class HelperBase {
-  private WebDriver wd;
+  public WebDriver wd;
 
   public HelperBase(WebDriver wd) {
     this.wd = wd;
