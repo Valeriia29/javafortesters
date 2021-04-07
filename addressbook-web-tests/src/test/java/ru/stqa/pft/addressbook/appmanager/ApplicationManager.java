@@ -55,6 +55,7 @@ public class ApplicationManager {
 
 
   public GroupHelper getGroupHelper() {
+
     return groupHelper;
   }
 
